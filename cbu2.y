@@ -65,7 +65,8 @@ stmt_list: 	stmt_list stmt 	{$$=MakeListTree($1, $2);}
 stmt	: 	ID ASSGN expr STMTEND	{ $1->token = ID2; $$=MakeOPTree(ASSGN, $1, $3);}
 		;
 
-expr	:	expr ADD expr	{ $$=MakeOPTree(ADD, $1, $3); }
+expr	:	'(' expr ')'	{ $$ = $2; }
+		|	expr ADD expr	{ $$=MakeOPTree(ADD, $1, $3); }
 		|	expr SUB expr	{ $$=MakeOPTree(SUB, $1, $3); }
 		|	expr MUL expr	{ $$=MakeOPTree(MUL, $1, $3); }
 		|	expr DIV expr	{ $$=MakeOPTree(DIV, $1, $3); }

@@ -26,6 +26,13 @@ PUSH 100
 PUSH 4
 /
 :=
+LVALUE ResOf괄호
+PUSH 3
+RVALUE 다
+*
+RVALUE 가
++
+:=
 HALT
 $ -- END OF EXECUTION CODE AND START OF VAR DEFINITIONS --
 DW 가
@@ -34,4 +41,5 @@ DW Size
 DW 다
 DW 우선순위
 DW ResOfDiv
+DW ResOf괄호
 END
