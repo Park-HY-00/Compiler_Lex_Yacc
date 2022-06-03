@@ -1437,7 +1437,7 @@ yyreduce:
   case 10:
 /* Line 1792 of yacc.c  */
 #line 70 "cbu2.y"
-    { if ((yyvsp[(3) - (3)])==0) printf("can't divide by zero\n"); else (yyval)=MakeOPTree(DIV, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
+    { (yyval)=MakeOPTree(DIV, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 12:

@@ -27,7 +27,6 @@ id		{letter}({letter}|{digit})*
 곱하기	{return(MUL); }
 나누기	{return(DIV); }
 나머지	{return(MOD); }
-만약에	{return(IF); }
 :=		{return(ASSGN); }
 ;		{return(STMTEND); }
 시작		{return(START); }
