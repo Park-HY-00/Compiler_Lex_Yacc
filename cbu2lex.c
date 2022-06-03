@@ -802,12 +802,12 @@ YY_RULE_SETUP
 case 7:
 YY_RULE_SETUP
 #line 29 "cbu2.l"
-{return("("); }
+{return('('); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 30 "cbu2.l"
-{return(")"); }
+{return(')'); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
