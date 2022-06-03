@@ -18,7 +18,7 @@ typedef struct nodeType {
 	struct nodeType *son;
 	struct nodeType *brother;
 	} Node;
-
+	
 #define YYSTYPE Node*
 	
 int tsymbolcnt=0;
@@ -49,7 +49,9 @@ void	divstmt(int, int, int);
 int		insertsym(char *);
 %}
 
-%token	ADD SUB MUL DIV ASSGN ID NUM STMTEND START END ID2
+%token	ADD SUB MUL DIV ASSGN ID NUM STMTEND START END ID2 IF
+
+%left GE LE EQ NE '>' '<'
 %left ADD SUB
 %left MUL DIV
 %%
@@ -62,7 +64,11 @@ stmt_list: 	stmt_list stmt 	{$$=MakeListTree($1, $2);}
 		;
 
 stmt	: 	ID ASSGN expr STMTEND	{ $1->token = ID2; $$=MakeOPTree(ASSGN, $1, $3);}
+		|	selection_stmt
 		;
+		
+selection_stmt	:	IF '(' expr ')' stmt STMTEND	{ $$=MakeOPTree(IF, $3, $5); }
+				;
 
 expr	:	expr ADD expr	{ $$=MakeOPTree(ADD, $1, $3); }
 		|	expr SUB expr	{ $$=MakeOPTree(SUB, $1, $3); }
@@ -177,6 +183,10 @@ void prtcode(int token, int val)
 		break;
 	case NUM:
 		fprintf(fp, "PUSH %d\n", val);
+		break;
+	case IF:
+		// if (/* expr */) fprintf(fp, "GOTO %s\n", symtbl[val]);
+		// else (/* expr */) fprintf(fp, "GOTO %s\n", symtbl[val]);
 		break;
 	case ADD:
 		fprintf(fp, "+\n");
