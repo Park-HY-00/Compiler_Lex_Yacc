@@ -1,0 +1,31 @@
+LVALUE 가
+PUSH 3
+:=
+LVALUE 나
+PUSH 7
+:=
+LVALUE Size
+RVALUE 나
+RVALUE 가
+-
+PUSH 1
++
+:=
+LVALUE 다
+PUSH 5
+:=
+LVALUE 우선순위
+RVALUE 가
+PUSH 5
+PUSH 2
+*
++
+:=
+HALT
+$ -- END OF EXECUTION CODE AND START OF VAR DEFINITIONS --
+DW 가
+DW 나
+DW Size
+DW 다
+DW 우선순위
+END

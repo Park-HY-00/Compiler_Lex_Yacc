@@ -52,6 +52,7 @@ int		insertsym(char *);
 %token	ADD SUB MUL DIV ASSGN ID NUM STMTEND START END ID2
 %left ADD SUB
 %left MUL DIV
+
 %%
 program	: START stmt_list END	{ if (errorcnt==0) {codegen($2); dwgen();} }
 		;
@@ -81,7 +82,7 @@ int main(int argc, char *argv[])
 {
 	printf("\nsample CBU compiler v2.0\n");
 	printf("(C) Copyright by Jae Sung Lee (jasonlee@cbnu.ac.kr), 2022.\n");
-	printf("\n2020069022\nPark Hyeong Yeong\n");
+	printf("\n2020069022\nPark Hyeong Yeong\n\n");
 	
 	if (argc == 2)
 		yyin = fopen(argv[1], "r");

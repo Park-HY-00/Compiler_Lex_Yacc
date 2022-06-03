@@ -50,14 +50,13 @@ extern int yydebug;
      SUB = 259,
      MUL = 260,
      DIV = 261,
-     MOD = 262,
-     ASSGN = 263,
-     ID = 264,
-     NUM = 265,
-     STMTEND = 266,
-     START = 267,
-     END = 268,
-     ID2 = 269
+     ASSGN = 262,
+     ID = 263,
+     NUM = 264,
+     STMTEND = 265,
+     START = 266,
+     END = 267,
+     ID2 = 268
    };
 #endif
 

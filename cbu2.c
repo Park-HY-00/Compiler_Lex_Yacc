@@ -134,7 +134,10 @@ int		insertsym(char *);
 # define YYERROR_VERBOSE 0
 #endif
 
-
+/* In a future release of Bison, this section will be replaced
+   by #include "cbu2.h".  */
+#ifndef YY_YY_CBU2_H_INCLUDED
+# define YY_YY_CBU2_H_INCLUDED
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -187,12 +190,12 @@ int yyparse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-
+#endif /* !YY_YY_CBU2_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
 /* Line 390 of yacc.c  */
-#line 195 "cbu2.c"
+#line 198 "cbu2.c"
 
 #ifdef short
 # undef short
@@ -484,8 +487,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    56,    56,    59,    60,    61,    64,    67,    68,    69,
-      70,    71,    74,    75
+       0,    57,    57,    60,    61,    62,    65,    68,    69,    70,
+      71,    72,    75,    76
 };
 #endif
 
@@ -1388,73 +1391,73 @@ yyreduce:
     {
         case 2:
 /* Line 1792 of yacc.c  */
-#line 56 "cbu2.y"
+#line 57 "cbu2.y"
     { if (errorcnt==0) {codegen((yyvsp[(2) - (3)])); dwgen();} }
     break;
 
   case 3:
 /* Line 1792 of yacc.c  */
-#line 59 "cbu2.y"
+#line 60 "cbu2.y"
     {(yyval)=MakeListTree((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)]));}
     break;
 
   case 4:
 /* Line 1792 of yacc.c  */
-#line 60 "cbu2.y"
+#line 61 "cbu2.y"
     {(yyval)=MakeListTree(NULL, (yyvsp[(1) - (1)]));}
     break;
 
   case 5:
 /* Line 1792 of yacc.c  */
-#line 61 "cbu2.y"
+#line 62 "cbu2.y"
     { errorcnt++; yyerrok;}
     break;
 
   case 6:
 /* Line 1792 of yacc.c  */
-#line 64 "cbu2.y"
+#line 65 "cbu2.y"
     { (yyvsp[(1) - (4)])->token = ID2; (yyval)=MakeOPTree(ASSGN, (yyvsp[(1) - (4)]), (yyvsp[(3) - (4)]));}
     break;
 
   case 7:
 /* Line 1792 of yacc.c  */
-#line 67 "cbu2.y"
+#line 68 "cbu2.y"
     { (yyval)=MakeOPTree(ADD, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 8:
 /* Line 1792 of yacc.c  */
-#line 68 "cbu2.y"
+#line 69 "cbu2.y"
     { (yyval)=MakeOPTree(SUB, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 9:
 /* Line 1792 of yacc.c  */
-#line 69 "cbu2.y"
+#line 70 "cbu2.y"
     { (yyval)=MakeOPTree(MUL, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 10:
 /* Line 1792 of yacc.c  */
-#line 70 "cbu2.y"
+#line 71 "cbu2.y"
     { (yyval)=MakeOPTree(DIV, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 12:
 /* Line 1792 of yacc.c  */
-#line 74 "cbu2.y"
+#line 75 "cbu2.y"
     { /* ID node is created in lex */ }
     break;
 
   case 13:
 /* Line 1792 of yacc.c  */
-#line 75 "cbu2.y"
+#line 76 "cbu2.y"
     { /* NUM node is created in lex */ }
     break;
 
 
 /* Line 1792 of yacc.c  */
-#line 1457 "cbu2.c"
+#line 1460 "cbu2.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1686,13 +1689,13 @@ yyreturn:
 
 
 /* Line 2055 of yacc.c  */
-#line 79 "cbu2.y"
+#line 80 "cbu2.y"
 
 int main(int argc, char *argv[]) 
 {
 	printf("\nsample CBU compiler v2.0\n");
 	printf("(C) Copyright by Jae Sung Lee (jasonlee@cbnu.ac.kr), 2022.\n");
-	printf("\n2020069022\nPark Hyeong Yeong\n");
+	printf("\n2020069022\nPark Hyeong Yeong\n\n");
 	
 	if (argc == 2)
 		yyin = fopen(argv[1], "r");
