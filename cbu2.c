@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 /* A Bison parser, made by GNU Bison 2.7.  */
 
 /* Bison implementation for Yacc-like parsers in C
@@ -490,8 +491,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    58,    58,    61,    62,    63,    66,    67,    70,    73,
-      74,    75,    76,    77,    80,    81
+       0,    59,    59,    62,    63,    64,    67,    68,    71,    74,
+      75,    76,    77,    78,    81,    82
 };
 #endif
 
@@ -1401,73 +1402,73 @@ yyreduce:
     {
         case 2:
 /* Line 1792 of yacc.c  */
-#line 58 "cbu2.y"
+#line 59 "cbu2.y"
     { if (errorcnt==0) {codegen((yyvsp[(2) - (3)])); dwgen();} }
     break;
 
   case 3:
 /* Line 1792 of yacc.c  */
-#line 61 "cbu2.y"
+#line 62 "cbu2.y"
     {(yyval)=MakeListTree((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)]));}
     break;
 
   case 4:
 /* Line 1792 of yacc.c  */
-#line 62 "cbu2.y"
+#line 63 "cbu2.y"
     {(yyval)=MakeListTree(NULL, (yyvsp[(1) - (1)]));}
     break;
 
   case 5:
 /* Line 1792 of yacc.c  */
-#line 63 "cbu2.y"
+#line 64 "cbu2.y"
     { errorcnt++; yyerrok;}
     break;
 
   case 6:
 /* Line 1792 of yacc.c  */
-#line 66 "cbu2.y"
+#line 67 "cbu2.y"
     { (yyvsp[(1) - (4)])->token = ID2; (yyval)=MakeOPTree(ASSGN, (yyvsp[(1) - (4)]), (yyvsp[(3) - (4)]));}
     break;
 
   case 8:
 /* Line 1792 of yacc.c  */
-#line 70 "cbu2.y"
+#line 71 "cbu2.y"
     { (yyval)=MakeOPTree(IF, (yyvsp[(3) - (6)]), (yyvsp[(5) - (6)])); }
     break;
 
   case 9:
 /* Line 1792 of yacc.c  */
-#line 73 "cbu2.y"
+#line 74 "cbu2.y"
     { (yyval)=MakeOPTree(ADD, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 10:
 /* Line 1792 of yacc.c  */
-#line 74 "cbu2.y"
+#line 75 "cbu2.y"
     { (yyval)=MakeOPTree(SUB, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 11:
 /* Line 1792 of yacc.c  */
-#line 75 "cbu2.y"
+#line 76 "cbu2.y"
     { (yyval)=MakeOPTree(MUL, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 12:
 /* Line 1792 of yacc.c  */
-#line 76 "cbu2.y"
+#line 77 "cbu2.y"
     { (yyval)=MakeOPTree(DIV, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 14:
 /* Line 1792 of yacc.c  */
-#line 80 "cbu2.y"
+#line 81 "cbu2.y"
     { /* ID node is created in lex */ }
     break;
 
   case 15:
 /* Line 1792 of yacc.c  */
-#line 81 "cbu2.y"
+#line 82 "cbu2.y"
     { /* NUM node is created in lex */ }
     break;
 
@@ -1810,7 +1811,7 @@ void prtcode(int token, int val)
 		break;
 	case IF:
 		// if (/* expr */) fprintf(fp, "GOTO %s\n", symtbl[val]);
-		// else (/* expr */) fprintf(fp, "GOTO %s\n", symtbl[val]);
+		// else fprintf(fp, "GOTO %s\n", symtbl[val]);
 		break;
 	case ADD:
 		fprintf(fp, "+\n");

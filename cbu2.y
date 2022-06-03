@@ -54,6 +54,7 @@ int		insertsym(char *);
 %left GE LE EQ NE '>' '<'
 %left ADD SUB
 %left MUL DIV
+
 %%
 program	: START stmt_list END	{ if (errorcnt==0) {codegen($2); dwgen();} }
 		;
@@ -64,10 +65,10 @@ stmt_list: 	stmt_list stmt 	{$$=MakeListTree($1, $2);}
 		;
 
 stmt	: 	ID ASSGN expr STMTEND	{ $1->token = ID2; $$=MakeOPTree(ASSGN, $1, $3);}
-		|	selection_stmt
+		|	condition_stmt
 		;
 		
-selection_stmt	:	IF '(' expr ')' stmt STMTEND	{ $$=MakeOPTree(IF, $3, $5); }
+condition_stmt	:	IF '(' expr ')' stmt STMTEND	{ $$=MakeOPTree(IF, $3, $5); }
 				;
 
 expr	:	expr ADD expr	{ $$=MakeOPTree(ADD, $1, $3); }
@@ -80,8 +81,7 @@ expr	:	expr ADD expr	{ $$=MakeOPTree(ADD, $1, $3); }
 term	:	ID		{ /* ID node is created in lex */ }
 		|	NUM		{ /* NUM node is created in lex */ }
 		;
-
-
+		
 %%
 int main(int argc, char *argv[]) 
 {
@@ -186,7 +186,7 @@ void prtcode(int token, int val)
 		break;
 	case IF:
 		// if (/* expr */) fprintf(fp, "GOTO %s\n", symtbl[val]);
-		// else (/* expr */) fprintf(fp, "GOTO %s\n", symtbl[val]);
+		// else fprintf(fp, "GOTO %s\n", symtbl[val]);
 		break;
 	case ADD:
 		fprintf(fp, "+\n");
