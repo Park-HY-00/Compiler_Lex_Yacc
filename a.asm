@@ -21,6 +21,11 @@ PUSH 2
 *
 +
 :=
+LVALUE ResOfDiv
+PUSH 100
+PUSH 4
+/
+:=
 HALT
 $ -- END OF EXECUTION CODE AND START OF VAR DEFINITIONS --
 DW 가
@@ -28,4 +33,5 @@ DW 나
 DW Size
 DW 다
 DW 우선순위
+DW ResOfDiv
 END
