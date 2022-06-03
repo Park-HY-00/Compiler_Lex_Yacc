@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 {
 	printf("\nsample CBU compiler v2.0\n");
 	printf("(C) Copyright by Jae Sung Lee (jasonlee@cbnu.ac.kr), 2022.\n");
-	printf("\n2020069022\n박형영\n");
+	printf("\n2020069022\nPark Hyeong Yeong\n");
 	
 	if (argc == 2)
 		yyin = fopen(argv[1], "r");
