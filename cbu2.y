@@ -49,10 +49,10 @@ void	divstmt(int, int, int);
 int		insertsym(char *);
 %}
 
-%token	ADD SUB MUL DIV ASSGN ID NUM STMTEND START END ID2
+%token	ADD SUB MUL DIV SQR ASSGN ID NUM STMTEND START END ID2
 %left '(' ')'
 %left ADD SUB
-%left MUL DIV
+%left MUL DIV SQR
 
 %%
 program	: START stmt_list END	{ if (errorcnt==0) {codegen($2); dwgen();} }
@@ -71,6 +71,7 @@ expr	:	'(' expr ')'	{ $$ = $2; }
 		|	expr SUB expr	{ $$=MakeOPTree(SUB, $1, $3); }
 		|	expr MUL expr	{ $$=MakeOPTree(MUL, $1, $3); }
 		|	expr DIV expr	{ $$=MakeOPTree(DIV, $1, $3); }
+		|	SQR expr	{ $$=MakeOPTree(MUL, $2, $2); }
 		|	term
 		;
 		

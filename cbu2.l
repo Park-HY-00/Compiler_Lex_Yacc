@@ -28,6 +28,7 @@ id		{letter}({letter}|{digit})*
 나누기	{return(DIV); }
 "("	{return('('); }
 ")"	{return(')'); }
+제곱	{return(SQR); }
 :=		{return(ASSGN); }
 ;		{return(STMTEND); }
 시작		{return(START); }
