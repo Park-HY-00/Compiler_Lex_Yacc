@@ -50,6 +50,7 @@ int		insertsym(char *);
 %}
 
 %token	ADD SUB MUL DIV ASSGN ID NUM STMTEND START END ID2
+%left '(' ')'
 %left ADD SUB
 %left MUL DIV
 

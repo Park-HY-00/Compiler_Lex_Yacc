@@ -26,6 +26,8 @@ id		{letter}({letter}|{digit})*
 빼기		{return(SUB); }
 곱하기	{return(MUL); }
 나누기	{return(DIV); }
+"("	{return("("); }
+")"	{return(")"); }
 :=		{return(ASSGN); }
 ;		{return(STMTEND); }
 시작		{return(START); }

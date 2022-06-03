@@ -487,8 +487,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    57,    57,    60,    61,    62,    65,    68,    69,    70,
-      71,    72,    73,    76,    77
+       0,    58,    58,    61,    62,    63,    66,    69,    70,    71,
+      72,    73,    74,    77,    78
 };
 #endif
 
@@ -1391,73 +1391,73 @@ yyreduce:
     {
         case 2:
 /* Line 1792 of yacc.c  */
-#line 57 "cbu2.y"
+#line 58 "cbu2.y"
     { if (errorcnt==0) {codegen((yyvsp[(2) - (3)])); dwgen();} }
     break;
 
   case 3:
 /* Line 1792 of yacc.c  */
-#line 60 "cbu2.y"
+#line 61 "cbu2.y"
     {(yyval)=MakeListTree((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)]));}
     break;
 
   case 4:
 /* Line 1792 of yacc.c  */
-#line 61 "cbu2.y"
+#line 62 "cbu2.y"
     {(yyval)=MakeListTree(NULL, (yyvsp[(1) - (1)]));}
     break;
 
   case 5:
 /* Line 1792 of yacc.c  */
-#line 62 "cbu2.y"
+#line 63 "cbu2.y"
     { errorcnt++; yyerrok;}
     break;
 
   case 6:
 /* Line 1792 of yacc.c  */
-#line 65 "cbu2.y"
+#line 66 "cbu2.y"
     { (yyvsp[(1) - (4)])->token = ID2; (yyval)=MakeOPTree(ASSGN, (yyvsp[(1) - (4)]), (yyvsp[(3) - (4)]));}
     break;
 
   case 7:
 /* Line 1792 of yacc.c  */
-#line 68 "cbu2.y"
+#line 69 "cbu2.y"
     { (yyval) = (yyvsp[(2) - (3)]); }
     break;
 
   case 8:
 /* Line 1792 of yacc.c  */
-#line 69 "cbu2.y"
+#line 70 "cbu2.y"
     { (yyval)=MakeOPTree(ADD, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 9:
 /* Line 1792 of yacc.c  */
-#line 70 "cbu2.y"
+#line 71 "cbu2.y"
     { (yyval)=MakeOPTree(SUB, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 10:
 /* Line 1792 of yacc.c  */
-#line 71 "cbu2.y"
+#line 72 "cbu2.y"
     { (yyval)=MakeOPTree(MUL, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 11:
 /* Line 1792 of yacc.c  */
-#line 72 "cbu2.y"
+#line 73 "cbu2.y"
     { (yyval)=MakeOPTree(DIV, (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); }
     break;
 
   case 13:
 /* Line 1792 of yacc.c  */
-#line 76 "cbu2.y"
+#line 77 "cbu2.y"
     { /* ID node is created in lex */ }
     break;
 
   case 14:
 /* Line 1792 of yacc.c  */
-#line 77 "cbu2.y"
+#line 78 "cbu2.y"
     { /* NUM node is created in lex */ }
     break;
 
@@ -1695,7 +1695,7 @@ yyreturn:
 
 
 /* Line 2055 of yacc.c  */
-#line 81 "cbu2.y"
+#line 82 "cbu2.y"
 
 int main(int argc, char *argv[]) 
 {
